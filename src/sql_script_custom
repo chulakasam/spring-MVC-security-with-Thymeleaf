@@ -1,0 +1,36 @@
+USE `employee_directory`;
+
+DROP TABLE IF EXISTS `roles`;
+DROP TABLE IF EXISTS `members`;
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `user_id` varchar(50) NOT NULL,
+  `pw` char(68) NOT NULL,
+  `active` tinyint NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Inserting data for table `members`
+--
+-- NOTE: The passwords are encrypted using BCrypt
+--
+-- A generation tool is avail at: https://www.luv2code.com/generate-bcrypt-password
+--
+-- Default passwords here are: fun123
+--
+
+INSERT INTO `members`
+VALUES
+('johny','{bcrypt}$2a$10$oq..GPfDRcPkiBUuV6t.uO8DbisQmup8FI3PhX7DSegLmfvZXlsbS',1),
+('marie','{bcrypt}$2a$10$oq..GPfDRcPkiBUuV6t.uO8DbisQmup8FI3PhX7DSegLmfvZXlsbS',1),
+('sussie','{bcrypt}$2a$10$oq..GPfDRcPkiBUuV6t.uO8DbisQmup8FI3PhX7DSegLmfvZXlsbS',1);
+
+
+--
+-- Table structure for table `authorities`
+--
